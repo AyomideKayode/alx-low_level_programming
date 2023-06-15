@@ -4,4 +4,6 @@ Task 1: gcc -E $CFILE -o c = script that runs a C file through the preprocessor 
 
 Task 2: gcc -c $CFILE = script that compiles a C file but does not link. The C file name will be saved in the variable ```$CFILE```. The output file should be named the same as the C file, but with the extension ```.o``` instead of ```.c```.
 
-Task 3:  
+Task 3: gcc -s $CFILE =  script that generates the assembly code of a C code and save it in an output file. The C file name will be saved in the variable ```$CFILE```. The output file should be named the same as the C file, but with the extension ```.s``` instead of ```.c```.
+
+Task 4:   
