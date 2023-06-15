@@ -8,16 +8,16 @@ Task 2: gcc -s $CFILE =  script that generates the assembly code of a C code and
 
 Task 3: gcc $CFILE -o cisfun =  script that compiles a C file and creates an executable named ```cisfun```.   
 
-Task 4: ```#include <stdio.h>```
-```/**```
- ```* main - should print exactly "Programming is like building a multilingual puzzle```
- ```* return:0 program should end with the value 0```
- ```*/```
-```int main(void)```
-```{
+Task 4: #include <stdio.h>
+/**
+* main - should print exactly "Programming is like building a multilingual puzzle
+* return:0 program should end with the value 0
+*/
+int main(void)
+{
         puts("\"Programming is like building a multilingual puzzle");
         return (0);
-}``` = Write a C program that prints exactly ```"Programming is like building a multilingual puzzle```, followed by a new line.
+} = Write a C program that prints exactly ```"Programming is like building a multilingual puzzle```, followed by a new line.
 
 Task 5: #include <stdio.h>
 /**
@@ -30,3 +30,24 @@ int main(void)
         printf("with proper grammar, but the outcome is a piece of art,\n");
         return (0);
 } = Write a C program that prints exactly ```with proper grammar, but the outcome is a piece of art,```, followed by a new line 
+
+Task 6: #include <stdio.h>
+/**
+ * main - Entry point
+ * Description - a C program that prints the size of various types on
+ * the computer it is compiled and run on.
+ * Return: 0
+ */
+int main(void)
+{
+        printf("Size of a char: %i byte(s)\n", sizeof(char));
+        printf("Size of an int: %i byte(s)\n", sizeof(int));
+        printf("Size of a long int: %i byte(s)\n", sizeof(long int));
+        printf("Size of a long long int: %i byte(s)\n", sizeof(long long int));
+        printf("Size of a float: %i byte(s)\n", sizeof(float));
+        return (0);
+} = Write a C program that prints the size of various types on the computer it is compiled and run on.
+
+Task 7: gcc -S -masm=intel $CFILE =  script that generates the assembly code (Intel syntax) of a C code and save it in an output file.
+
+Task 8: 
