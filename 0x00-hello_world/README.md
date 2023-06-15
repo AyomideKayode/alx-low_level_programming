@@ -8,16 +8,25 @@ Task 2: gcc -s $CFILE =  script that generates the assembly code of a C code and
 
 Task 3: gcc $CFILE -o cisfun =  script that compiles a C file and creates an executable named ```cisfun```.   
 
-Task 4: ```#include <stdio.h>
-/**
- * main - should print exactly "Programming is like building a multilingual puzzle
- * return:0 program should end with the value 0
- */
-
-int main(void)
-{
+Task 4: ```#include <stdio.h>```
+```/**```
+ ```* main - should print exactly "Programming is like building a multilingual puzzle```
+ ```* return:0 program should end with the value 0```
+ ```*/```
+```int main(void)```
+```{
         puts("\"Programming is like building a multilingual puzzle");
         return (0);
 }``` = Write a C program that prints exactly ```"Programming is like building a multilingual puzzle```, followed by a new line.
 
-Task 5: 
+Task 5: #include <stdio.h>
+/**
+ * main - should print the phrase
+ * with proper grammar, but the outcome is a piece of art,
+ * Return: 0
+ */
+int main(void)
+{
+        printf("with proper grammar, but the outcome is a piece of art,\n");
+        return (0);
+} = Write a C program that prints exactly ```with proper grammar, but the outcome is a piece of art,```, followed by a new line 
