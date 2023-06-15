@@ -71,3 +71,7 @@ int main(void)
               s);
         return (1);
 } = Write a C program that prints exactly ```and that piece of art is useful" - Dora Korpar, 2015-10-19```, followed by a new line, to the standard error. 
+
+
+Submitting the above task has an error of Betty coding style because the line 12 had more than 80 characters and that was above the prefered limit. So instead of that, the code was revised to this;
+	write(1, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
