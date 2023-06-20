@@ -5,7 +5,7 @@
  * program should return 0
  * Return: 0
  */
-int main(void)
+int _putchar(char)
 {
 	char k[8] = "_putchar";
 
