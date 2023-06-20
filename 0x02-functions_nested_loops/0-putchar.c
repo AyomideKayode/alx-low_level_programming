@@ -5,15 +5,14 @@
  * program should return 0
  * Return: 0
  */
-int _putchar(char)
+int main(void)
 {
-	char k[8] = "_putchar";
-
+	char put[] = "_putchar";
 	int i = 0;
 
-	while (i <= 7)
+	while (put[i] != '\0')
 	{
-		_putchar(k[i]);
+		_putchar(put[i]);
 		i++;
 	}
 	_putchar('\n');
