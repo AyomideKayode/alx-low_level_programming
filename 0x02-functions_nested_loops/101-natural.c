@@ -9,10 +9,10 @@
  */
 int main(void)
 {
-	int i;
+	int i = 0;
 	int total = 0;
 
-	for (i = 1; i < 1024; i++)
+	while (i < 1024)
 	{
 		if (i % 3 == 0)
 			total += i;
