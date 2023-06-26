@@ -4,7 +4,6 @@
  * @str: The string to print
  * Description: prints 1st char, then 3rd, then 5th, etc
  */
-
 void puts2(char *str)
 {
 	int i;
