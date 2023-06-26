@@ -2,8 +2,8 @@
 #include <stdio.h>
 /**
  * print_array - prints `n` elements of an array of integers
- * @a - array of integers
- * @n - number of elements of the array to be printed
+ * @a: The array of integers
+ * @n: The number of element in the array
  * Description: Numbers must be seperated by commas and space
  * Numbers should be displayed in the same order they are stored in array.
  * allowed to use printf
