@@ -13,10 +13,13 @@ char *rot13(char *s)
 	for (i = 0; s[i] != '\0'; i++) /* loop through string */
 	{
 		/* check if within range of alphabets */
-		if ((s[i] > 64 && s[i] < 91) || (s[i] > 96 && s[i] < 123))
+		if (s[i] >= 65 && s[i] <= 90)
 		{
-			s[i] = (s[i] - 65 > 25) ?
-				rot_lower[s[i] - 97] : rot_upper[s[i] - 65];
+			s[i] = rot_upper[s[i] - 65];
+		}
+		else if (s[i] >= 97 && s[i] <= 122)
+		{
+			s[i] = rot_lower[s[i] - 97];
 		}
 	}
 	return (s);
