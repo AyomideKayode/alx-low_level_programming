@@ -16,5 +16,5 @@ int _strcmp(char *s1, char *s2)
 /* since strings are different, return will either be positive or negative */
 			return (s1[i] - s2[i]);
 	}
-	return (0);
+	return (0); /* end */
 }
