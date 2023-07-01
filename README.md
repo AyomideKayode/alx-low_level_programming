@@ -9,3 +9,4 @@ Project 4: C - More Functions and Nested Loop.
 Project 5: C - Pointers, Arrays and Strings.
 Project 6: C - More Pointers, Arrays and Strings.
 Project 7: Even more Pointers, Arrays and Strings. (At this point, be like say i go fight person. Lol)
+Project 8: Recursion.
