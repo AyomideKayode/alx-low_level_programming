@@ -8,9 +8,12 @@ Concepts to be learned in this repository:
 
 Description of what each file shows:
 
-- a program that prints its name
-- a program that prints the number of arguments passed into it
-- a program that prints all arguments it receives
-- a program that multiplies two numbers
-- a program that adds positive numbers: achieved this by creating an helper function. Which first determines if the argument passed is a number or not. And then the normal fucntion that adds positive numbers.
-- a program that prints the minimum number of coins to make change for an amount of money
+Task 0 - a program that prints its name
+
+Task 1 - a program that prints the number of arguments passed into it: this should exclude the program name itself. Which result in specifying in our code that ```argc -1```
+
+Task 2 - a program that prints all arguments it receives
+
+Task 3 - a program that multiplies two numbers
+Task 4 - a program that adds positive numbers: achieved this by creating an helper function. Which first determines if the argument passed is a number or not. And then the normal fucntion that adds positive numbers.
+Task 5 - a program that prints the minimum number of coins to make change for an amount of money
