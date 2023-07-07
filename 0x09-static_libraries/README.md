@@ -21,5 +21,7 @@ And then used the ```ar rcs libmy.a *.o``` command to move all ```.o``` files in
 Then the ```ar -t libmy.a``` command to check if the ```.o``` files have been moved succesfully. (A list should show on the output containing all ```.o``` files.)
 Finally, the ```nm libmy.a``` to list the symbols stored in the static library we just created.
 
+For the second task, after creating the ```.sh```. file and writing the script that creates the ```liball.a``` library; I changed modifications to allow it become executable. After pushing to github, Checker kept giving me one error out of five. Details aren't available for now. So I'll properly check again later to see if I can figure it out.
+
 Courtesy - Kazzywiz [https://twitter.com/kazzy_wiz]
 You're welcome.😁✌
