@@ -3,6 +3,21 @@
 #include <stdlib.h>
 
 /**
+ * _atoi_digit - convert a char to integer.
+ * @x: character to convert.
+ * Return: integer.
+ **/
+
+int _atoi_digit(char x)
+{
+	unsigned int res;
+
+	if (x <= '9' && x >= '0')
+		res = x - '0';
+	return (res);
+}
+
+/**
  * _isNumber - Define if a string is a number.
  * @argv: Pointer to string.
  * Return: success (0).
@@ -18,45 +33,26 @@ int _isNumber(char *argv)
 }
 
 /**
-  * _atoi_digit - convert character to integers.
-  * @c: character to be converted.
-  * Return: converted interger.
-  */
-
-int _atoi_digit(char c)
-{
-	unsigned int dig;
-
-	if (c <= '9' && c >= '0')
-		dig = c - '0';
-	return (dig);
-}
-
-/**
- * _calloc - allocate memory and set all values to 0
- * @nmemb: size
- * @size: sizeof(datatype)
- * Return: pointer to calloc'd string
- */
+ *_calloc - allocate array of size * nmemb.
+ * @nmemb: number of elements.
+ * @size: size of element.
+ * Return: pointer to array.
+ **/
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-        void *ptr;
-        unsigned int i; /* match unsigned arguments */
+	char *tab;
+	unsigned int i;
 
-        if (nmemb <= 0 || size <= 0) /* validate input */
-                return (NULL);
+	tab = malloc(size * nmemb);
 
-        /* allocate memory and check if error */
-        ptr = malloc(nmemb * size);
-        if (ptr == NULL)
-                return (NULL);
+	if (tab == NULL)
+		return (NULL);
 
-        /* set allocated memory values to 0 */
-        for (i = 0; i < nmemb * size; i++)
-                *((char *)ptr + i) = 0; /* type cast assigning values*/
+	for (i = 0; i < (size * nmemb); i++)
+		tab[i] = '0';
 
-        return (ptr);
+	return (tab);
 }
 
 /**
@@ -146,7 +142,7 @@ int main(int argc, char *argv[])
 	}
 	for (i = len2 - 1, c = 0; i >= 0; i--)
 	{
-	tabres = mul_array(argv[1], len1, argv[2][i], tabres, (lenres - 1 - c));
+	tabres = mul_array(argv[1], len1, argv[2][i], tabres,(lenres - 1 - c));
 	c++;
 	}
 	print_array(tabres, lenres);
