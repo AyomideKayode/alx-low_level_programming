@@ -117,7 +117,8 @@ void print_array(char *a, int nb)
 
 int main(int argc, char *argv[])
 {
-	int i, c, len1, len2, lenres;
+	int i, c, len1;
+	int len2, lenres;
 	char E[6] = {'E', 'r', 'r', 'o', 'r', '\n'};
 	char *tabres;
 
@@ -142,7 +143,7 @@ int main(int argc, char *argv[])
 	}
 	for (i = len2 - 1, c = 0; i >= 0; i--)
 	{
-	tabres = mul_array(argv[1], len1, argv[2][i], tabres,(lenres - 1 - c));
+	tabres = mul_array(argv[1], len1, argv[2][i], tabres, (lenres - 1 - c));
 	c++;
 	}
 	print_array(tabres, lenres);
