@@ -40,45 +40,43 @@ char *_strcopy(char *dest, char *src)
 
 /**
  * new_dog - a function that creates a new dog
- *
  * @name: name of dog
  * @age: age of dog
  * @owner: dog owner
- *
  * Return: struct pointer dog
  * NULL if function fails
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *dog;
+	dog_t *busky_dog;
 
 	/* if name and owner are empty and age is less than zero return null*/
 	if (!name || age < 0 || !owner)
 		return (NULL);
 
-	dog = (dog_t *) malloc(sizeof(dog_t));
-	if (dog == NULL)
+	busky_dog = (dog_t *) malloc(sizeof(dog_t));
+	if (busky_dog == NULL)
 		return (NULL);
 
-	dog->name = malloc(sizeof(char) * (_strlen(name) + 1));
-	if ((*dog).name == NULL)
+	busky_dog->name = malloc(sizeof(char) * (_strlen(name) + 1));
+	if ((*busky_dog).name == NULL)
 	{
-		free(dog);
+		free(busky_dog);
 		return (NULL);
 	}
 
-	dog->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
-	if ((*dog).owner == NULL)
+	busky_dog->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
+	if ((*busky_dog).owner == NULL)
 	{
-		free(dog->name);
-		free(dog);
+		free(busky_dog->name);
+		free(busky_dog);
 		return (NULL);
 	}
 
-	dog->name = _strcopy(dog->name, name);
-	dog->age = age;
-	dog->owner = _strcopy(dog->owner, owner);
+	busky_dog->name = _strcopy(busky_dog->name, name);
+	busky_dog->age = age;
+	busky_dog->owner = _strcopy(busky_dog->owner, owner);
 
-	return (dog);
+	return (busky_dog);
 }
