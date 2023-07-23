@@ -1,6 +1,12 @@
 ## <div align="center">Welcome to the world of C programming language.😎🤗</div>
 
-### <div align="left">This repo will contain all my projects folders for tasks done in C while learning in the ALX SE program.</div>
+### <div align="center">This repo will contain all my projects folders for tasks done in C while learning in the ALX SE program.🥴</div>
+
+#### <div align="center">
+- 🔭 I’m currently working on a Task from one of the numerous ALX Projects I have, as you can see from the list below. LOL.😁   
+
+- 🌱 I’m currently learning C Programming Language. With tasks from the ALX framework.
+</div>
 
 - Project 0: Hello World in C. Contains the foundations teaching of navigating the world of C programming language.
 
