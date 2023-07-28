@@ -34,3 +34,9 @@
 	![Twitter](https://www.google.com/search?q=twitter&tbm=isch&ved=2ahUKEwiZu_3cnbKAAxUxsUwKHZdwBHYQ2-cCegQIABAA&oq=twitter&gs_lcp=CgNpbWcQAzIECCMQJzIECCMQJzIKCAAQigUQsQMQQzIHCAAQigUQQzIICAAQgAQQsQMyBwgAEIoFEEMyBwgAEIoFEEMyBwgAEIoFEEMyBwgAEIoFEEMyBQgAEIAEUJMHWKoPYP8SaABwAHgBgAGkA4gB_gySAQcyLTUuMC4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=0iPEZJmKMbHisgKX4ZGwBw&bih=642&biw=1280#imgrc=_YPAtfy1L2jv6M)
 	[Kazzywiz](https://twitter.com/kazzy_wiz)
 	Tasks for Singly Linked Lists in C.
+
+## Author
+
+	- Website - [Ayomide Kayode](https://github.com/AyomideKayode)
+	- ALX SOFTWARE ENGINEERING PROGRAM - [ALX_AFRICA](https://www.alxafrica.com/programmes/)
+	- Twitter - [@kazzy_wiz](https://www.twitter.com/kazzy_wiz)
