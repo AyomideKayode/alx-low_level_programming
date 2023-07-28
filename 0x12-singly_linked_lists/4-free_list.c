@@ -18,9 +18,17 @@ void free_list(list_t *head)
 }
 
 /**
- * another way using temp pointer
+ * free_list - free linked list
+ * @head: linked list.
+ * @ptr: temporary pointer to hold next node.
+ * Description: another way using temp pointer.
+ * Using temporary pointer method to free list.
  *
- *      list_t *ptr;
+ * Return: nothing(void)
+ *
+ * void free_list(list_t *head)
+ * {
+ *	list_t *ptr;
  *
  *	if (head == NULL) // account for no linked list
  *		return;
@@ -32,4 +40,5 @@ void free_list(list_t *head)
  *		free(ptr->str); // free malloced strings
  *		free(ptr);
  *	}
+ * }
  */
