@@ -1,5 +1,7 @@
 ## Singly Linked Lists.
-	* Each file in this repository holds code that illustrates an essential concept of programming, specific to the C programming language: how to build, use, and free singly linked lists
+	> Each file in this repository holds code that illustrates an essential concept of programming,
+ 	> specific to the C programming language:
+   	> how to build, use, and free singly linked lists
 
 ### Description of what each file shows:
 	* lists.h ----------- holds files' function prototypes and a sample struct linked list.
@@ -26,12 +28,6 @@
 	* OS: Ubuntu 14.04 LTS
 	* Compiler: gcc 4.8.4
 	* Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
-
-### Author
-	Ayomide Kayode 
-	![Twitter](https://www.google.com/search?q=twitter&tbm=isch&ved=2ahUKEwiZu_3cnbKAAxUxsUwKHZdwBHYQ2-cCegQIABAA&oq=twitter&gs_lcp=CgNpbWcQAzIECCMQJzIECCMQJzIKCAAQigUQsQMQQzIHCAAQigUQQzIICAAQgAQQsQMyBwgAEIoFEEMyBwgAEIoFEEMyBwgAEIoFEEMyBwgAEIoFEEMyBQgAEIAEUJMHWKoPYP8SaABwAHgBgAGkA4gB_gySAQcyLTUuMC4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=0iPEZJmKMbHisgKX4ZGwBw&bih=642&biw=1280#imgrc=_YPAtfy1L2jv6M)
-	[Kazzywiz](https://twitter.com/kazzy_wiz)
-	Tasks for Singly Linked Lists in C.
 
 ## Author
 
