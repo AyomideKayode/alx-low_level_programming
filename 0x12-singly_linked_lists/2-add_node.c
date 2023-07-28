@@ -19,7 +19,7 @@ int _strlen(const char *str)
  * add_node - add new node to beginning of custom linked list.
  * @head: linked list.
  * @str: data for new node.
- * 
+ *
  * Return: address of new element, or NULL if failed.
  */
 
@@ -28,7 +28,7 @@ list_t *add_node(list_t **head, const char *str)
 	list_t *new_node; /* create new node */
 
 	if (str == NULL) /* validate input */
-			return (NULL);
+		return (NULL);
 	if (strdup(str) == NULL) /*check if strdup malloc errored */
 		return (NULL);
 
