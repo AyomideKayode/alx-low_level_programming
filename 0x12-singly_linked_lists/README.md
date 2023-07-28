@@ -22,6 +22,4 @@
 	---
 ### Authors
 	Ayomide Kayode[![Kazzywiz](https://www.google.com/search?sxsrf=AB5stBi6fY8_XfLexfWkLWefQfPEmd4T6A:1690531356614&q=twitter+bird&tbm=isch&source=lnms&sa=X&sqi=2&ved=2ahUKEwiP-_eH-LCAAxXPTMAKHSf4C9IQ0pQJegQICxAB&biw=1280&bih=648&dpr=1.5#imgrc=JwwTE1f758mFLM)](https://twitter.com/kazzy_wiz)
-	
-
 	Tasks for Singly Linked Lists in C.
