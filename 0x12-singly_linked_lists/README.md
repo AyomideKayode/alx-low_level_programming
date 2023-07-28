@@ -1,7 +1,5 @@
 ## Singly Linked Lists.
-> Each file in this repository holds code that illustrates an essential concept of programming,
-	> specific to the C programming language:
-	> how to build, use, and free singly linked lists
+	* Each file in this repository holds code that illustrates an essential concept of programming, specific to the C programming language: how to build, use, and free singly linked lists
 
 ### Description of what each file shows:
 	* lists.h ----------- holds files' function prototypes and a sample struct linked list.
