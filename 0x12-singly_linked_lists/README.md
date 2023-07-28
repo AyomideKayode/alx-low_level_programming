@@ -4,7 +4,8 @@
 	> how to build, use, and free singly linked lists
 
 ### Description of what each file shows:
-	* lists.h ----------- holds files' function prototypes and a sample struct linked list
+	* lists.h ----------- holds files' function prototypes and a sample struct linked list.
+	* main --- directory(folder) containing all main.c files.
 	* main.c files ----- holds test files that showcase examples of how to use functions
 	* Files that start with:
 	0. a function that prints all elements of a linked list
@@ -21,5 +22,5 @@
 
 	---
 ### Authors
-	Ayomide Kayode[![Kazzywiz](https://www.google.com/search?sxsrf=AB5stBi6fY8_XfLexfWkLWefQfPEmd4T6A:1690531356614&q=twitter+bird&tbm=isch&source=lnms&sa=X&sqi=2&ved=2ahUKEwiP-_eH-LCAAxXPTMAKHSf4C9IQ0pQJegQICxAB&biw=1280&bih=648&dpr=1.5#imgrc=JwwTE1f758mFLM)](https://twitter.com/kazzy_wiz)
+	Ayomide Kayode[![Kazzywiz](https://twitter.com/kazzy_wiz)]
 	Tasks for Singly Linked Lists in C.
