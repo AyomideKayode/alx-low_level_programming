@@ -1,8 +1,8 @@
 ## 0x02. C - Functions, nested loops.
 
-- Each file in this repository holds code that illustrates an essential concept of programming,
+> Each file in this repository holds code that illustrates an essential concept of programming,
+> specific to the C programming language:
 
-* specific to the C programming language:
 * What are nested loops and how to use them
 * What is a function and how do you use functions
 * What is the difference between a declaration and a definition of a function
@@ -13,16 +13,18 @@
 
 ## Synopsis
 
-This project introduces functions and nested loops in C programming. Each .c file contains a different function while the holberton.h file contains all the function prototypes.
+> This project introduces functions and nested loops in C programming.
+
+> Each .c file contains a different function while the main.h file contains all the function prototypes.
 
 ### Description of what each file does
 
 * main --- directory(folder) containing all main.c files.
-    * main.c files ----- holds test files that showcase examples of how to use functions
-    * Files that start with:
-    * 0. prints "Holberton"
-    * 1. prints the alphabet, in lowercase
-    * 2. prints 10 times the alphabet, in lowercase
+* main.c files ----- holds test files that showcase examples of how to use functions
+* Files that start with:
+* 0. prints "Holberton"
+* 1. prints the alphabet, in lowercase
+* 2. prints 10 times the alphabet, in lowercase
     * 3. checks for lowercase character; returns 1 if true and 0 if false
     * 4. checks for alphabetic character; returns 1 if true and 0 if false
     * 5. prints the sign of a number
@@ -44,9 +46,9 @@ This project introduces functions and nested loops in C programming. Each .c fil
 ### Environment
 
 * Language: C
-* OS: Ubuntu 14.04 LTS
-* Compiler: gcc 4.8.4
-* Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
+    * OS: Ubuntu 14.04 LTS
+    * Compiler: gcc 4.8.4
+    * Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
 
 ## Author
 
