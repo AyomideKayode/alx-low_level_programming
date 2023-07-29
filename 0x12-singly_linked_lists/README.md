@@ -1,10 +1,11 @@
 ## Singly Linked Lists.
-	> Each file in this repository holds code that illustrates an essential concept of programming,
- 	> specific to the C programming language:
-   	> how to build, use, and free singly linked lists
+> Each file in this repository holds code that illustrates an essential concept of programming,
+> specific to the C programming language:
+> how to build, use, and free singly linked lists
 
 ### Description of what each file shows:
-	* lists.h ----------- holds files' function prototypes and a sample struct linked list.
+
+* lists.h ----------- holds files' function prototypes and a sample struct linked list.
 	* main --- directory(folder) containing all main.c files.
 	* main.c files ----- holds test files that showcase examples of how to use functions
 	* Files that start with:
@@ -15,7 +16,7 @@
 	4. a function that free a linked list
 	5. a function that prints `You're beat! and yet, you must allow,\nI bore my house upon my back!\n` before the main function is executed.
 	- You are allowed to use the printf function.
-	- In this task, filename is ```100-first.c```.
+	- In this task, filename is `100-first.c`.
 	6. Write a 64-bit program in assembly that prints ```Hello, Holberton```, followed by a new line.
 	- You are only allowed to use the printf function
 	- You are not allowed to use interrupts
@@ -31,6 +32,6 @@
 
 ## Author
 
-	- Website - [Ayomide Kayode](https://github.com/AyomideKayode)
-	- ALX SOFTWARE ENGINEERING PROGRAM - [ALX_AFRICA](https://www.alxafrica.com/programmes/)
-	- Twitter - [@kazzy_wiz](https://www.twitter.com/kazzy_wiz)
+- Website - [Ayomide Kayode](https://github.com/AyomideKayode)
+- ALX SOFTWARE ENGINEERING PROGRAM - [ALX_AFRICA](https://www.alxafrica.com/programmes/)
+- Twitter - [@kazzy_wiz](https://www.twitter.com/kazzy_wiz)
