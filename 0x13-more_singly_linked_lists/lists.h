@@ -12,7 +12,6 @@
  *
  * Description: singly linked list node structure
  * for ALX project.
- * 
  */
 typedef struct listint_s
 {
