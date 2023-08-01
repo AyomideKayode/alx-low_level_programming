@@ -23,8 +23,9 @@ listint_t *reverse_listint(listint_t **head)
 		*head = next_node;
 	}
 
-	/* After the loop, 'prev' will be pointing to the new head (reversed head) */
+/* After the loop, 'prev' will be pointing to the new head (reversed head) */
 	*head = prev;
 
-	return (*head); /* Return a pointer to the first node of the reversed list */
+	/* Return a pointer to the first node of the reversed list */
+	return (*head);
 }
