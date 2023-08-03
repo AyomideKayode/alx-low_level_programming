@@ -43,3 +43,5 @@
 - Project 17: Printf. A Custom implementation of the C programming language '```printf```' function. My eyes saw red while doing this project. I almost cried. *This project was created and done in a whole other repository. Will add the link here [....]
 
 - Project 18: Singly Linked Lists.
+
+- Project 19: More Singly Linked Lists.
