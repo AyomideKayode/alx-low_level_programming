@@ -29,6 +29,26 @@
 	10. a function that deletes the node at index index of a `listint_t` linked list.
 	- where `index` is the index of the node that should be deleted. Index starts at `0`.
 	- Returns: `1` if it succeeded, `-1` if it failed.
+	11.  a function that reverses a `listint_t` linked list.
+	- Returns: a pointer to the first node of the reversed list.
+	- You are not allowed to use more than `1` loop.
+	- You are not allowed to use `malloc`, `free` or arrays.
+	- You can only declare a maximum of two variables in your function.
+	12. a function that prints a `listint_t` linked list.
+	- Returns: the number of nodes in the list.
+	- This function can print lists with a loop.
+	- You should go through the list only once.
+	- If the function fails, exit the program with status `98`.
+	13. a function that frees a `listint_t` list.
+	- This function can free lists with a loop.
+	- You should go though the list only once.
+	- Returns: the size of the list that was free'd.
+	- The function sets the `head` to `NULL`.
+	14. a function that finds the loop in a linked list.
+	- Returns: The address of the node where the loop starts, or `NULL` if there is no loop.
+	- You are not allowed to use `malloc`, `free` or arrays.
+	- You can only declare a maximum of two variables in your function.
+
 
 ### Environment
 	* Language: C
