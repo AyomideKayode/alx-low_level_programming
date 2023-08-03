@@ -1,4 +1,4 @@
-## Singly Linked Lists.
+## Bit Manipulation.
 > Each file in this repository holds code that illustrates an essential concept of programming,
 > specific to the C programming language:
 > How to manipulate bits and use bitwise operators.
@@ -34,13 +34,13 @@
 	- Returns: 0 if big endian, 1 if little endian.
 
 ### Environment
-	* Language: C
+* Language: C
 	* OS: Ubuntu 14.04 LTS
 	* Compiler: gcc 4.8.4
 	* Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
 
 ## Author
 
-	- Website - [Ayomide Kayode](https://github.com/AyomideKayode)
-	- ALX SOFTWARE ENGINEERING PROGRAM - [ALX_AFRICA](https://www.alxafrica.com/programmes/)
-	- Twitter - [@kazzy_wiz](https://www.twitter.com/kazzy_wiz)
+- Website - [Ayomide Kayode](https://github.com/AyomideKayode)
+- ALX SOFTWARE ENGINEERING PROGRAM - [ALX_AFRICA](https://www.alxafrica.com/programmes/)
+- Twitter - [@kazzy_wiz](https://www.twitter.com/kazzy_wiz)
