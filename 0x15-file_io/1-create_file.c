@@ -1,6 +1,23 @@
 #include "main.h"
 
 /**
+ * custom_strlen - calculate length of NULL terminated string
+ * @str: string
+ *
+ * Return: length
+ */
+
+size_t custom_strlen(const char *str)
+{
+	size_t len = 0;
+
+	while (str[len] != '\0')
+		len++;
+
+	return (len);
+}
+
+/**
  * create_file - creates a new file or truncates an existing file,
  * and writes content into it.
  * @filename: name of file to be created.
@@ -25,12 +42,12 @@ int create_file(const char *filename, char *text_content)
 	/* check if there isn't text to write into the string */
 	if (text_content == NULL)
 	{
-		close (fd);
+		close(fd);
 		return (1);
 	}
 
 	/* write text into new file */
-	nb_wrote = write(fd, text_content, strlen(text_content));
+	nb_wrote = write(fd, text_content, custom_strlen(text_content));
 	if (nb_wrote == -1)
 	{
 		close(fd);
