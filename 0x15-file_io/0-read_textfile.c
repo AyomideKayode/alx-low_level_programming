@@ -26,7 +26,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buffer == NULL)
 		return (0);
 
-	/* reads number of bytes from the file into the buffer */	
+	/* reads number of bytes from the file into the buffer */
 	nb_read = read(fd, buffer, letters);
 	if (nb_read == -1) /* if number of bytes read is -1, error occured. Close*/
 	{
