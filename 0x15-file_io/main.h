@@ -3,6 +3,7 @@
 
 /* dprintf */
 #include <stdio.h>
+#include <string.h>
 
 /* malloc, free */
 #include <stdlib.h>
