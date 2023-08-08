@@ -15,6 +15,9 @@
 /* close */
 #include <unistd.h>
 
+/* elf header */
+#include <stdint.h>
+
 /* Function Prototypes */
 
 ssize_t read_textfile(const char *filename, size_t letters);
