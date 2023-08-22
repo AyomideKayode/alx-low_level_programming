@@ -1,47 +1,45 @@
-## <div align="center">Welcome to the world of C programming language.😎🤗</div>
+<img src="https://assets.imaginablefutures.com/media/images/ALX_Logo.max-200x150.png" alt="ALX Logo" width="350">
 
-### <div align="center">This repo will contain all my projects folders for tasks done in C while learning in the ALX SE program.🥴</div>
+# C is FUN 😊
 
-#### <div align="center">🌱 I’m currently learning C Programming Language. With tasks from the ALX framework.</div>
+>🥴Yeah, said every programmer ever.
 
-#### <div align="center">🔭 I’m currently working on a Task from one of the numerous ALX Projects I have, as you can see from the list below. LOL.😁</div>
+# <div align="center">Welcome to the world of C programming language.😎🤗</div>
+### <div align="center">🌱 I’m currently learning C Programming Language. With tasks from the ALX framework.</div>
+---
+### <div align="center">🔭 And by extension, currently working on a task from one of the numerous ALX Projects I have, as you will see from the list below.😁</div>
+---
+<p align="center">
+  <img src="https://i.postimg.cc/rprHShJ1/C-compilation-process.gif" />
+</p>
 
-- Project 0: Hello World in C. Contains the foundations teaching of navigating the world of C programming language.
+## About
 
-- Project 1: C - Variables, If, Else and While. 
+- This repository consists of all the C programming projects done🥴 in the [ALX Africa](https://www.alxafrica.com/) Full stack Software Engineering course by [Ayomide Kayode](https://github.com/AyomideKayode).
+- All main.c files are prewritten by the school. We (the students) build functions that produce a specific output while also taking into consideration edge cases.
 
-- Project 2: C - Functions and Nested Loops.
+---
 
-- Project 3: C - Debugging. This project no funny at all. We weren't even provide with the "see details" option checker offers, which I believe is on purpose. Debugging really is a skill on its own.
+- [0x00](./0x00-hello_world) : Hello, World. Contains the foundations teaching of navigating the world of C programming language.
+- [0x01](./0x01-variables_if_else_while) : Variables,if,else,while.
+- [0x02](./0x02-functions_nested_loops) : Functions and Nested loops.
+- [0x03](./0x03-debugging) : Debugging. This project no funny at all. We weren't even provide with the "see details" option checker offers, which I believe is on purpose. Debugging really is a skill on its own.
+- [0x04](./0x04-more_functions_nested_loops) : More Functions and Nested Loops.
+- [0x05](./0x05-pointers_arrays_strings) : Pointers, Arrays and Strings.
+- [0x06](./0x06-pointers_arrays_strings) : More Pointers, Arrays and Strings.
+- [0x07](./0x07-pointers_arrays_strings) :  Even more Pointers, Arrays and Strings. (At this point, I'm ready to fight people. Lol)
+- [0x08](./0x08-recursion) : Recursion - A function that calls itself in itself. You get to understand factorials too.
+- [0x09](./0x09-static_libraries) : Static libraries.
+- [0x0A](./0x0A-argc_argv) : Argument Counts and Argument Vectors, argc, argv[].
+- [0x0B](./0x0B-malloc_free) : Dynamic and Automatic Allocation. Malloc, free.
+- [0x0C](./0x0C-more_malloc_free) : More malloc, free.
+- [0x0D](./0x0D-preprocessor) : Preprocessors.
+- [0x0E](./0x0E-structures_typedef) : Structures, typedef.
+- [0x0F](./0x0F-function_pointers) : Function pointers.
+- [0x10](./0x10-variadic_functions) : Variadic functions.
+- [0x11](https://github.com/AyomideKayode/printf) :  Printf. A Custom implementation of the C programming language '`printf`' function. My eyes saw red while doing this project. I almost cried. We were tasked to write our own printf project.
+- [0x12](./0x12-singly_linked_lists) : Singly Linked Lists.
+- [0x13](./0x13-more_singly_linked_lists) : More Singly Linked Lists.
+- [0x14](./0x14-bit_manipulation) : Bit manipulation.
+- [0x15](./0x15-file_io) : File I/O.
 
-- Project 4: C - More Functions and Nested Loop.
-
-- Project 5: C - Pointers, Arrays and Strings.
-
-- Project 6: C - More Pointers, Arrays and Strings.
-
-- Project 7: Even more Pointers, Arrays and Strings. (At this point, be like say i go fight person. Lol)
-
-- Project 8: Recursion - A function that calls itself in itself. You get to understand factorials too.
-
-- Project 9: Static libraries.
-
-- Project 10: Argument Counts and Argument Vectors. 
-
-- Project 11: Dynamic and Automatic Allocation. 
-
-- Project 12: More Malloc Free.
-
-- Project 13: Preprocessors.
-
-- Project 14: Structures, typedef.
-
-- Project 15: Function Pointers.
-
-- Project 16: Variadic Functions.
-
-- Project 17: Printf. A Custom implementation of the C programming language '```printf```' function. My eyes saw red while doing this project. I almost cried. *This project was created and done in a whole other repository. Will add the link here [....]
-
-- Project 18: Singly Linked Lists.
-
-- Project 19: More Singly Linked Lists.
