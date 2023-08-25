@@ -5,7 +5,7 @@
 
 ### Description of what each file shows:
 
-* main.h ----------- holds files' function prototypes and a sample struct linked list.
+* main.h ----------- holds files' function prototypes.
 * main --- directory(folder) containing all main.c files.
 * main.c files ----- holds test files that showcase examples of how to use functions
 
