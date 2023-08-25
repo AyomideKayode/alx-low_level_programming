@@ -1,4 +1,4 @@
-Tasks on Static Libraries
+## Tasks on Static Libraries
 
 Concepts to be learned in this repository:
 
@@ -7,13 +7,13 @@ Concepts to be learned in this repository:
 - how to create one ar -cr
 - how to use it
 
-Description of what each file shows:
+### Description of what each file shows:
 
 - main.h - included function prototypes of functions in library
 - create_static_lib.sh - shell script to compile pre linking and create static library from all the ```.c``` files
 - liball.a - created this static library containing all functions listed
 
-Walkthrough for the task:
+### Walkthrough for the task:
 
 - First, I created a ```.c``` file and named it ```complete_functions.c``` then wrote all the prototypes that has been formerly created in previous tasks. Another way would have been to copy the mentioned ```.c``` files from previous tasks. Long process.
 - After creating the file, I used the ```gcc -c *.c``` command, to convert the ```.c``` file to ```.o``` file. The command can also be used if I had copied all ```.c``` files from previous tasks. The asterisk(*) would select all ```.c``` files and convert to ```.o```.
