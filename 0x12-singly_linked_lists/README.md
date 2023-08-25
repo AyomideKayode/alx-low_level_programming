@@ -6,6 +6,7 @@
 * lists.h ----------- holds files' function prototypes and a sample struct linked list.
 * main --- directory(folder) containing all main.c files.
 * main.c files ----- holds test files that showcase examples of how to use functions
+
 * Files that start with:
 0. a function that prints all elements of a linked list
 1. a function that returns the number of elements in a linked list

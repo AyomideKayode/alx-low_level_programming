@@ -1,4 +1,4 @@
-## Singly Linked Lists.
+## More Singly Linked Lists.
 
 > Each file in this repository holds code that illustrates an essential concept of programming,
 > specific to the C programming language:
