@@ -1,117 +1,235 @@
 #include "main.h"
+
 /**
- * main - main entry point
- * @argc: argument count
- * @argv: argument vector
- * Return: 0 if success
+ * display_addr - prints address
+ * @ptr: Pointer.
  */
-
-int main(int __attribute__((__unused__)) argc, char *argv[])
+void display_addr(char *ptr)
 {
-	int fd, r, c;
-	Elf64_Ehdr *header;
+	int idx;
+	int start;
+	char sys;
 
-	header = malloc(sizeof(Elf64_Ehdr));
-	if (header == NULL)
+	printf("  Entry point address:               0x");
+
+	sys = ptr[4] + '0';
+	if (sys == '1')
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
-		exit(98);
-	}
-	if (argc != 2)
-	{
-		dprintf(STDERR_FILENO, "Usage: %s file\n", argv[0]);
-		exit(1);
-	}
-	fd = open(argv[1], O_RDONLY);
-	if (fd < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-	r = read(fd, header, sizeof(Elf64_Ehdr));
-	if (r < 0)
-	{
-		free(header);
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
+		start = 26;
+		printf("80");
+		for (idx = start; idx >= 22; idx--)
+		{
+			if (ptr[idx] > 0)
+				printf("%x", ptr[idx]);
+			else if (ptr[idx] < 0)
+				printf("%x", 256 + ptr[idx]);
+		}
+		if (ptr[7] == 6)
+			printf("00");
 	}
 
-	verify_elf(header->e_ident);
-	magic_value(header->e_ident);
-	class_value(header->e_ident);
+	if (sys == '2')
+	{
+		start = 26;
+		for (idx = start; idx > 23; idx--)
+		{
+			if (ptr[idx] >= 0)
+				printf("%02x", ptr[idx]);
 
-	free(header);
-	c = close(fd);
-	if (c)
-		dprintf(STDERR_FILENO, "Error: Can't close fd\n"), exit(98);
+			else if (ptr[idx] < 0)
+				printf("%02x", 256 + ptr[idx]);
+
+		}
+	}
+	printf("\n");
+}
+
+/**
+ * display_type - prints type
+ * @ptr: Pointer
+ */
+void display_type(char *ptr)
+{
+	char buffer = ptr[16];
+
+	if (ptr[5] == 1)
+		buffer = ptr[16];
+	else
+		buffer = ptr[17];
+
+	printf("  Type:                              ");
+	if (buffer == 0)
+		printf("NONE (No file type)\n");
+	else if (buffer == 1)
+		printf("REL (Relocatable file)\n");
+	else if (buffer == 2)
+		printf("EXEC (Executable file)\n");
+	else if (buffer == 3)
+		printf("DYN (Shared object file)\n");
+	else if (buffer == 4)
+		printf("CORE (Core file)\n");
+	else
+		printf("<unknown: %x>\n", buffer);
+}
+
+/**
+ * display_osabi - prints osabi
+ * @ptr: Pointer
+ */
+void display_osabi(char *ptr)
+{
+	char os = ptr[7];
+
+	printf("  OS/ABI:                            ");
+	if (os == 0)
+		printf("UNIX - System V\n");
+	else if (os == 2)
+		printf("UNIX - NetBSD\n");
+	else if (os == 6)
+		printf("UNIX - Solaris\n");
+	else
+		printf("<unknown: %x>\n", os);
+
+	printf("  ABI Version:                       %d\n", ptr[8]);
+}
+
+
+/**
+ * display_version - prints version
+ * @ptr: Pointer
+ */
+void display_version(char *ptr)
+{
+	int vers = ptr[6];
+
+	printf("  Version:                           %d", vers);
+
+	if (vers == EV_CURRENT)
+		printf(" (current)");
+
+	printf("\n");
+}
+/**
+ * display_data - prints data
+ * @ptr: Pointer
+ */
+void display_data(char *ptr)
+{
+	char data = ptr[5];
+
+	printf("  Data:                              2's complement");
+	if (data == 1)
+		printf(", little endian\n");
+
+	if (data == 2)
+		printf(", big endian\n");
+}
+
+/**
+ * display_magic - prints magic info.
+ * @ptr: Pointer
+ */
+void display_magic(char *ptr)
+{
+	int buf;
+
+	printf("  Magic:  ");
+
+	for (buf = 0; buf < 16; buf++)
+		printf(" %02x", ptr[buf]);
+
+	printf("\n");
+
+}
+
+/**
+ * check_sys - check the version system.
+ * @ptr: magic.
+ * Return: no return.
+ */
+void check_sys(char *ptr)
+{
+	char sys = ptr[4] + '0';
+
+	if (sys == '0')
+		exit(98);
+
+	printf("ELF Header:\n");
+	display_magic(ptr);
+
+	if (sys == '1')
+		printf("  Class:                             ELF32\n");
+
+	if (sys == '2')
+		printf("  Class:                             ELF64\n");
+
+	display_data(ptr);
+	display_version(ptr);
+	display_osabi(ptr);
+	display_type(ptr);
+	display_addr(ptr);
+}
+
+/**
+ * check_elf - check if it is an elf file.
+ * @ptr: magic.
+ * Return: 1 if it is an elf file. 0 if not.
+ */
+int check_elf(char *ptr)
+{
+	int addr = (int)ptr[0];
+	char E = ptr[1];
+	char L = ptr[2];
+	char F = ptr[3];
+
+	if (addr == 127 && E == 'E' && L == 'L' && F == 'F')
+		return (1);
+
 	return (0);
 }
 
 /**
- * verify_elf - helper to check if input is valid elf file
- * @e_ident: pointer to char array
+ * main - Displays the information contained
+ * @argc: number of arguments.
+ * @argv: arguments array.
+ * Return: Always 0.
  */
-
-void verify_elf(unsigned char *e_ident)
+int main(int argc, char *argv[])
 {
-	int i = 0;
+	int fd, ret_read;
+	char ptr[27];
 
-	for (i = 0; i < 4; i++)
+	if (argc != 2)
 	{
-		if (e_ident[i] == 0x7f && e_ident[i] == 'E' &&
-			e_ident[i] == 'L' && e_ident[i] == 'F')
-		{
-			printf("ELF Header:\n");
-		}
-		else
-		{
-			dprintf(STDERR_FILENO, "Error: Not valid ELF\n");
-			exit(98);
-		}
+		dprintf(STDERR_FILENO, "Usage: elf_header elf_filename\n");
+		exit(98);
 	}
-}
 
-/**
- * magic_value - print the ELF magic numbers
- * @e_ident: pointer to an array containing the ELF magic numbers
- */
-void magic_value(unsigned char *e_ident)
-{
-	int i;
+	fd = open(argv[1], O_RDONLY);
 
-	printf("  Magic:   ");
-
-	for (i = 0; i < EI_NIDENT; i++)
+	if (fd < 0)
 	{
-		printf("%02x ", e_ident[i]);
-		printf("\n");
+		dprintf(STDERR_FILENO, "Err: file can not be open\n");
+		exit(98);
 	}
-		printf(" ");
-}
 
-/**
- * class_value - print ELF's class
- * @e_ident: pointer to char array
- */
+	lseek(fd, 0, SEEK_SET);
+	ret_read = read(fd, ptr, 27);
 
-void class_value(unsigned char *e_ident)
-{
-	printf("  Class:                             ");
+	if (ret_read == -1)
+	{
+		dprintf(STDERR_FILENO, "Err: The file can not be read\n");
+		exit(98);
+	}
 
-	if (e_ident[EI_CLASS] == ELFCLASSNONE)
+	if (!check_elf(ptr))
 	{
-		printf("This class is invalid\n");
+		dprintf(STDERR_FILENO, "Err: It is not an ELF\n");
+		exit(98);
 	}
-	else if (e_ident[EI_CLASS] == ELFCLASS32)
-	{
-		printf("ELF32\n");
-	}
-	else if (e_ident[EI_CLASS] == ELFCLASS64)
-	{
-		printf("ELF64\n");
-	}
-	else
-	{
-		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
-	}
+
+	check_sys(ptr);
+	close(fd);
+
+	return (0);
 }
