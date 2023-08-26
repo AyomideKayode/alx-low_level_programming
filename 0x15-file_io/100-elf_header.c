@@ -1,56 +1,103 @@
 #include "main.h"
+/**
+ * main - main entry point
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: 0 if success
+ */
 
-/* #define EI_NIDENT 16 */
+int main(int __attribute__((__unused__)) argc, char *argv[])
+{
+	int fd, r, c;
+	Elf64_Ehdr *header;
+
+	header = malloc(sizeof(Elf64_Ehdr));
+	if (header == NULL)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
+		exit(98);
+	}
+	if (argc != 2)
+	{
+		dprintf(STDERR_FILENO, "Usage: %s file\n", argv[0]);
+		exit(1);
+	}
+	fd = open(argv[1], O_RDONLY);
+	if (fd < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+	r = read(fd, header, sizeof(Elf64_Ehdr));
+	if (r < 0)
+	{
+		free(header);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+
+	verify_elf(header->e_ident);
+	magic_value(header->e_ident);
+	class_value(header->e_ident);
+
+	free(header);
+	c = close(fd);
+	if (c)
+		dprintf(STDERR_FILENO, "Error: Can't close fd\n"), exit(98);
+	return (0);
+}
 
 /**
- * verify_elf - Verifies if the input is a valid ELF file.
- * @e_ident: The ELF identification array.
- *
- * Return: void.
+ * verify_elf - helper to check if input is valid elf file
+ * @e_ident: pointer to char array
  */
 
 void verify_elf(unsigned char *e_ident)
 {
-	if (e_ident[EI_MAG0] != 0x7f || e_ident[EI_MAG1] != 'E' ||
-			e_ident[EI_MAG2] != 'L' || e_ident[EI_MAG3] != 'F')
+	int i = 0;
+
+	for (i = 0; i < 4; i++)
 	{
-		dprintf(STDERR_FILENO, "Error: Not valid ELF\n");
-		exit(98);
+		if (e_ident[i] == 0x7f && e_ident[i] == 'E' &&
+			e_ident[i] == 'L' && e_ident[i] == 'F')
+		{
+			printf("ELF Header:\n");
+		}
+		else
+		{
+			dprintf(STDERR_FILENO, "Error: Not valid ELF\n");
+			exit(98);
+		}
 	}
 }
 
 /**
- * print_magic - Prints the magic numbers of the ELF header.
- * @e_ident: The ELF identification array.
- *
- * Return: void.
+ * magic_value - print the ELF magic numbers
+ * @e_ident: pointer to an array containing the ELF magic numbers
  */
-
-void print_magic(unsigned char *e_ident)
+void magic_value(unsigned char *e_ident)
 {
 	int i;
 
-	printf("Magic:   ");
+	printf("  Magic:   ");
 
 	for (i = 0; i < EI_NIDENT; i++)
 	{
 		printf("%02x ", e_ident[i]);
+		printf("\n");
 	}
-	printf("\n");
+		printf(" ");
 }
 
 /**
- * print_class - Prints the ELF class.
- * @e_ident: The ELF identification array.
- *
- * Return: void.
+ * class_value - print ELF's class
+ * @e_ident: pointer to char array
  */
 
-void print_class(unsigned char *e_ident)
+void class_value(unsigned char *e_ident)
 {
-	printf("Class:                             ");
+	printf("  Class:                             ");
 
-	/* determine the ELF class */
 	if (e_ident[EI_CLASS] == ELFCLASSNONE)
 	{
 		printf("This class is invalid\n");
@@ -67,74 +114,4 @@ void print_class(unsigned char *e_ident)
 	{
 		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 	}
-}
-
-/**
- * close_file - Closes the file descriptor and performs error handling.
- * @fd: The file descriptor to close.
- *
- * Return: void.
- */
-void close_file(int fd)
-{
-	int c = close(fd);
-
-	if (c)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd\n");
-		exit(98);
-	}
-}
-
-
-/**
- * main - Entry point of the program.
- * @argc: The number of command-line arguments.
- * @argv: An array of command-line argument strings.
- *
- * Return: Always 0 (Success).
- */
-
-int main(int __attribute__((__unused__)) argc, char *argv[])
-{
-	int fd, r;
-	Elf64_Ehdr *header;
-
-	if (argc != 2) /* check for correct number of command-line arguments */
-	{
-		dprintf(STDERR_FILENO, "Usage: %s file\n", argv[0]);
-		exit(1);
-	}
-
-	fd = open(argv[1], O_RDONLY); /* open the ELF file */
-	if (fd < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-
-	header = malloc(sizeof(Elf64_Ehdr)); /* allocate memory for ELF header */
-	if (header == NULL)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
-		exit(98);
-	}
-
-	r = read(fd, header, sizeof(Elf64_Ehdr)); /* read the ELF header */
-	if (r < 0)
-	{
-		free(header);
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-
-	verify_elf(header->e_ident); /* verify the ELF format */
-	print_magic(header->e_ident); /* print the magic numbers */
-	print_class(header->e_ident); /* print elf class*/
-
-	/* close file and clean up */
-	free(header);
-	close_file(fd);
-
-	return (0);
 }

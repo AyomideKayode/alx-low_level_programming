@@ -20,8 +20,8 @@
 #include <elf.h>
 
 void verify_elf(unsigned char *e_ident);
-void print_magic(unsigned char *e_ident);
-void print_class(unsigned char *e_ident);
+void magic_value(unsigned char *e_ident);
+void class_value(unsigned char *e_ident);
 
 /* Function Prototypes */
 
