@@ -16,6 +16,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 
 	/* malloc and set new node data */
 	new = malloc(sizeof(struct dlistint_s));
+
 	if (!new)
 		return (NULL);
 	new->n = n;
@@ -23,7 +24,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	/* account for empty linked list */
 	if (*head == NULL)
 	{
-    *head = new;
+		*head = new;
 		new->next = NULL;
 		new->prev = NULL;
 		return (new);
