@@ -37,4 +37,10 @@
 	<img src="./main/dynamic-lib step1.PNG" alt="Dynamic Library1" style="width: 100%;">
 	<img src="./main/dynamic-lib step2.PNG" alt="Dynamic Library2" style="width: 100%;">
 
-1. [Without libraries what have we? We have no past and no future](./1-create_dynamic_lib.sh) :
+1. [Without libraries what have we? We have no past and no future](./1-create_dynamic_lib.sh) : Create a script that creates a dynamic library called `liball.so` from all the `.c` files that are in the current directory.
+	- Compile all `.c` files in the current directory into object files
+	- Create the dynamic library `liball.so` from the object files
+	- Clean up by removing the object files
+	- All these is easily done by just temporarily copying all the `.c` files that we moved into the main folder back into the PWD.
+	- Then we write up the shell script to solve for Task 1 and run it to know it works.
+	- The `.c` files can be deleted afterwards. Since they are present in the main folder.
