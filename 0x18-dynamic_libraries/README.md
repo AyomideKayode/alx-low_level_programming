@@ -44,3 +44,49 @@
 	- All these is easily done by just temporarily copying all the `.c` files that we moved into the main folder back into the PWD.
 	- Then we write up the shell script to solve for Task 1 and run it to know it works.
 	- The `.c` files can be deleted afterwards. Since they are present in the main folder.
+
+2. [Let's call C functions from Python](./100-operations.so) : Create a dynamic library that contains C functions that can be called from Python. See example for more detail.
+	```sh
+	julien@ubuntu:~/0x18$ cat 100-tests.py
+	import random
+	import ctypes
+
+	cops = ctypes.CDLL('./100-operations.so')
+	a = random.randint(-111, 111)
+	b = random.randint(-111, 111)
+	print("{} + {} = {}".format(a, b, cops.add(a, b)))
+	print("{} - {} = {}".format(a, b, cops.sub(a, b)))
+	print("{} x {} = {}".format(a, b, cops.mul(a, b)))
+	print("{} / {} = {}".format(a, b, cops.div(a, b)))
+	print("{} % {} = {}".format(a, b, cops.mod(a, b)))
+	julien@ubuntu:~/0x16. Doubly linked lists$ python3 100-tests.py 
+	66 + -76 = -10
+	66 - -76 = 142
+	66 x -76 = -5016
+	66 / -76 = 0
+	66 % -76 = 66
+	julien@ubuntu:~/0x18$ python3 100-tests.py 
+	-34 + -57 = -91
+	-34 - -57 = 23
+	-34 x -57 = 1938
+	-34 / -57 = 0
+	-34 % -57 = -34
+	julien@ubuntu:~/0x18$ python3 100-tests.py 
+	-5 + -72 = -77
+	-5 - -72 = 67
+	-5 x -72 = 360
+	-5 / -72 = 0
+	-5 % -72 = -5
+	julien@ubuntu:~/0x18$ python3 100-tests.py 
+	39 + -62 = -23
+	39 - -62 = 101
+	39 x -62 = -2418
+	39 / -62 = 0
+	39 % -62 = 39
+	julien@ubuntu:~/0x18$ 
+	```
+	- To do this, first I:
+		- Write the C [function](./main/100-operations.c) that I want to include in the dynamic library. In this case, we're trying to create a library with functions for addition, subtraction, multiplication, division, and modulo. 
+		- Then I compile the C code into a shared dynamic library `.so` using the following command:
+			- `gcc -shared -o 100-operations.so -fPIC 100-operations.c` which is basically a combination of the first two lines in the shell script we wrote in the previous task.
+		- Now that we have a [shared library](./100-operations.so), we can go ahead and run our [python file](./100-tests.py). This script imports the dynamic library 100-operations.so and calls the C functions from Python.
