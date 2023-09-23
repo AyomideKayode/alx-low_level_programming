@@ -42,4 +42,6 @@
 - [0x13](./0x13-more_singly_linked_lists) : More Singly Linked Lists.
 - [0x14](./0x14-bit_manipulation) : Bit manipulation.
 - [0x15](./0x15-file_io) : File I/O.
-
+- [0x17](./0x17-doubly_linked_lists/) : Doubly Linked Lists.
+- [0x18](./0x18-dynamic_libraries/) : Dynamic Libraries.
+- [0x19](https://github.com/AyomideKayode/monty) : Stacks, Queues - LIFO, FIFO
