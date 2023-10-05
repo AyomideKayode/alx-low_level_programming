@@ -2,7 +2,8 @@
 
 /**
  * hash_djb2 - implement djb2 algorithm (one of best string hash functions)
- * source code copied from http://www.cse.yorku.ca/~oz/hash.html
+ * source code copied from:
+ * https://gist.github.com/papamuziko/7bb52dfbb859fdffc4bd0f95b76f71e8
  * Credit: Dan Bernstein
  * @str: value
  * Return: The new hash value.
