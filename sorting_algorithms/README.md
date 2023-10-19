@@ -154,6 +154,8 @@
 	kazzywiz@Kazzywiz:~/alx-low_level_programming/sorting_algorithms$ 
 	```
 
+* Oops, wrong repository for the project.😅🤦🏽‍♂️WTF!
+
 | Task | File |
 | ---- | ---- |
 | 1. Insertion sort | [SOON](./) |
