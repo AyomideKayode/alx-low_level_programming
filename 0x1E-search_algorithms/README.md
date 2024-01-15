@@ -219,12 +219,59 @@ Found 999 at index: -1
 ayomide@Kazzywiz:~/alx-low_level_programming/0x1E-search_algorithms$ 
 ```
 
+10. [Exponential search](./103-exponential.c) :
+
+Write a function that searches for a value in a sorted array of integers using the [Exponential search algorithm](https://en.wikipedia.org/wiki/Exponential_search)
+
+- Prototype : `int exponential_search(int *array, size_t size, int value);`
+- Where `array` is a pointer to the first element of the array to search in
+- `size` is the number of elements in `array`
+- And `value` is the value to search for
+- Your function must return the first index where `value` is located
+- You can assume that `array` will be sorted in ascending order
+- If `value` is not present in `array` or if `array` is `NULL`, your function must return `-1`
+- You have to use powers of 2 as exponential ranges to search in your array
+- Every time you compare a value in the array to the value you are searching for, you have to print this value (See example)
+- Once you’ve found the good range, you need to use a binary search:
+  - Every time you split the array, you have to print the new array (or subarray) you’re searching in (See example)
+
+```sh
+ayomide@Kazzywiz:~/alx-low_level_programming/0x1E-search_algorithms$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 103-main.c 103-exponential.c -o 103-exponential
+ayomide@Kazzywiz:~/alx-low_level_programming/0x1E-search_algorithms$ ./103-exponential 
+Value checked array[1] = [1]
+Value checked array[2] = [2]
+Value checked array[4] = [4]
+Value checked array[8] = [18]
+Value found between indexes [8] and [15]
+Searching in array: 18, 19, 23, 54, 61, 62, 76, 99
+Searching in array: 61, 62, 76, 99
+Found 62 at index: 13
+
+Value checked array[1] = [1]
+Value checked array[2] = [2]
+Value found between indexes [2] and [4]
+Searching in array: 2, 3, 4
+Found 3 at index: 3
+
+Value checked array[1] = [1]
+Value checked array[2] = [2]
+Value checked array[4] = [4]
+Value checked array[8] = [18]
+Value found between indexes [8] and [15]
+Searching in array: 18, 19, 23, 54, 61, 62, 76, 99
+Searching in array: 61, 62, 76, 99
+Searching in array: 76, 99
+Searching in array: 99
+Found 999 at index: -1
+ayomide@Kazzywiz:~/alx-low_level_programming/0x1E-search_algorithms$ 
+```
+
 ---
 
 ### Environment
 
 - Language: C
-  - OS: Ubuntu 14.04 LTS
+  - OS: Ubuntu 20.04 LTS
   - Compiler: gcc 4.8.4
   - Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
 
