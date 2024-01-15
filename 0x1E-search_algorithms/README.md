@@ -23,17 +23,17 @@ You will be asked to write files containing big O notations. Please use this for
 - `O(1)`
 - `O(n)`
 - `O(n!)`
-- n*m -> `O(nm)`
+- n\*m -> `O(nm)`
 - n square -> `O(n^2)`
 - sqrt n -> `O(sqrt(n))`
 - log(n) -> `O(log(n))`
-- n * log(n) -> `O(nlog(n))`
+- n \* log(n) -> `O(nlog(n))`
 - …
 
 ## Description of what each file shows (Tasks)
 
+- search_algos.h ----------- holds files' function prototypes.
 - main :- folder that holds all `main.c` files used in compiling files created by students
-
 
 0. [Linear search](./0-linear.c) :
 
@@ -49,7 +49,7 @@ Write a function that searches for a value in an array of integers using the [Li
 
 ```sh
 ayomide@Kazzywiz:~/alx-low_level_programming/0x1E-search_algorithms$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 0-main.c 0-linear.c -o 0-linear
-ayomide@Kazzywiz:~/alx-low_level_programming/0x1E-search_algorithms$ ./0-linear 
+ayomide@Kazzywiz:~/alx-low_level_programming/0x1E-search_algorithms$ ./0-linear
 Value checked array[0] = [10]
 Value checked array[1] = [1]
 Value checked array[2] = [42]
@@ -91,7 +91,7 @@ Write a function that searches for a value in a sorted array of integers using t
 
 ```sh
 ayomide@Kazzywiz:~/alx-low_level_programming/0x1E-search_algorithms$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 1-main.c 1-binary.c -o 1-binary
-ayomide@Kazzywiz:~/alx-low_level_programming/0x1E-search_algorithms$ ./1-binary 
+ayomide@Kazzywiz:~/alx-low_level_programming/0x1E-search_algorithms$ ./1-binary
 Searching in array: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 Searching in array: 0, 1, 2, 3
 Searching in array: 2, 3
@@ -107,13 +107,54 @@ Searching in array: 5, 6, 7, 8, 9
 Searching in array: 8, 9
 Searching in array: 9
 Found 999 at index: -1
-ayomide@Kazzywiz:~/alx-low_level_programming/0x1E-search_algorithms$ 
+ayomide@Kazzywiz:~/alx-low_level_programming/0x1E-search_algorithms$
 ```
 
-| Task             | File                       |
-| ---------------- | -------------------------- |
-| 2. Big O #0      | [2-O](./2-O)               |
-| 3. Big O #1      | [3-O](./3-O)               |
-| 4. Big O #2      | [4-O](./4-O)               |
-| 5. Big O #3      | [5-O](./5-O)               |
-| 6. Big O #4      | [6-O](./6-O)               |
+2. [Big O #0](./2-O) :
+
+What is the `time complexity` (worst case) of a linear search in an array of size `n`?
+
+3. [Big O #1](./3-O) :
+
+What is the `space complexity` (worst case) of an iterative linear search algorithm in an array of size `n`?
+
+4. [Big O #2](./4-O) :
+
+What is the `time complexity` (worst case) of a binary search in an array of size `n`?
+
+5. [Big O #3](./5-O) :
+
+What is the `space complexity` (worst case) of a binary search in an array of size `n`?
+
+6. [Big O #4](./6-O) :
+
+What is the space complexity of this function / algorithm?
+
+```c
+int **allocate_map(int n, int m)
+{
+     int **map;
+
+     map = malloc(sizeof(int *) * n);
+     for (size_t i = 0; i < n; i++)
+     {
+          map[i] = malloc(sizeof(int) * m);
+     }
+     return (map);
+}
+```
+
+---
+
+### Environment
+
+- Language: C
+  - OS: Ubuntu 14.04 LTS
+  - Compiler: gcc 4.8.4
+  - Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
+
+## Author
+
+- Website - [Ayomide Kayode](https://github.com/AyomideKayode)
+- ALX SOFTWARE ENGINEERING PROGRAM - [ALX_AFRICA](https://www.alxafrica.com/programmes/)
+- Twitter - [@kazzy_wiz](https://www.twitter.com/kazzy_wiz)
