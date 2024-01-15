@@ -187,6 +187,38 @@ Found 999 at index: -1
 ayomide@Kazzywiz:~/alx-low_level_programming/0x1E-search_algorithms$ 
 ```
 
+8. [Big O #5](./101-O) :
+
+What is the `time complexit`y (average case) of a jump search in an array of size `n`, using `step = sqrt(n)`?
+
+9. [Interpolation search](./102-interpolation.c)
+
+Write a function that searches for a value in a sorted array of integers using the [Interpolation search algorithm](https://en.wikipedia.org/wiki/Interpolation_search)
+
+- Prototype : `int interpolation_search(int *array, size_t size, int value);`
+- Where `array` is a pointer to the first element of the array to search in
+- `size` is the number of elements in `array`
+- And `value` is the value to search for
+- Your function must return the first index where `value` is located
+- You can assume that `array` will be sorted in ascending order
+- If `value` is not present in `array` or if `array` is `NULL`, your function must return `-1`
+- To determine the probe position, you can use : `size_t pos = low + (((double)(high - low) / (array[high] - array[low])) * (value - array[low]))`
+- Every time you compare a value in the array to the value you are searching, you have to print this value (see example below)
+
+```sh
+ayomide@Kazzywiz:~/alx-low_level_programming/0x1E-search_algorithms$ ./102-interpolation 
+Value checked array[6] = [2]
+Value checked array[7] = [3]
+Found 3 at index: 7
+
+Value checked array[14] = [7]
+Found 7 at index: 14
+
+Value checked array[14] is out of range
+Found 999 at index: -1
+ayomide@Kazzywiz:~/alx-low_level_programming/0x1E-search_algorithms$ 
+```
+
 ---
 
 ### Environment
