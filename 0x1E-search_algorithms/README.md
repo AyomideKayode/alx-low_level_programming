@@ -282,6 +282,27 @@ Write a function that searches for a value in a sorted array of integers.
 - Every time you split the array, you have to print the new array (or subarray) you’re searching in (See example)
 - You have to use recursion. You may only use one loop (`while`, `for`, `do while`, etc.) in order to print the array
 
+```sh
+ayomide@Kazzywiz:~/alx-low_level_programming/0x1E-search_algorithms$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 104-main.c 104-advanced_binary.c -o 104-advanced_binary
+ayomide@Kazzywiz:~/alx-low_level_programming/0x1E-search_algorithms$ ./104-advanced_binary 
+Searching in array: 0, 1, 2, 5, 5, 6, 6, 7, 8, 9
+Searching in array: 6, 6, 7, 8, 9
+Searching in array: 8, 9
+Found 8 at index: 8
+
+Searching in array: 0, 1, 2, 5, 5, 6, 6, 7, 8, 9
+Searching in array: 0, 1, 2, 5, 5
+Searching in array: 5, 5
+Found 5 at index: 3
+
+Searching in array: 0, 1, 2, 5, 5, 6, 6, 7, 8, 9
+Searching in array: 6, 6, 7, 8, 9
+Searching in array: 8, 9
+Searching in array: 9
+Found 999 at index: -1
+ayomide@Kazzywiz:~/alx-low_level_programming/0x1E-search_algorithms$ 
+```
+
 ---
 
 ### Environment
