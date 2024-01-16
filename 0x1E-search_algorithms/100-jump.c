@@ -13,7 +13,7 @@ int jump_search(int *array, size_t size, int value)
 	int block, block_size;
 	int i = 0, holder = 0;
 
-	if (array == NULL) /* Check if the array is NULL */
+	if (array == NULL || size == 0) /* Check if the array is NULL */
 		return (-1);
 	/* Calculate the block size using square root of size */
 	block = sqrt((int)size);
