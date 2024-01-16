@@ -3,8 +3,8 @@
 /**
  * binary_search_mod - Binary search algorithm
  * @array: Pointer to the first element of the array to search in
- * @low: Lower bound of the search range
- * @high: Upper bound of the search range
+ * @min: Lower bound of the search range
+ * @max: Upper bound of the search range
  * @value: Value to search for
  * Return: Index where value is located, or -1 if not present
  */
@@ -51,7 +51,8 @@ int exponential_search(int *array, size_t size, int value)
 {
 	int i, prev;
 
-	/* Check for edge cases: array is NULL, size is 0, or value is smaller than the first element */
+	/* Check for edge cases: array is NULL, size is 0, */
+	/* or value is smaller than the first element */
 	if (!array || size == 0 || value < array[0])
 		return (-1);
 
